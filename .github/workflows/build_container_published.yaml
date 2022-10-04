@@ -2,7 +2,7 @@ name: part3 build and publish container
 on:
   push:
     paths:
-      - 'swpq/part3/container-publish/**'
+      - '**'
 jobs:
   build-and-publish-container:
     runs-on: ubuntu-latest
@@ -16,4 +16,4 @@ jobs:
           password: ${{ secrets.IDI2020_REGISTRY_PASSWORD }}
         - name: Build and publish container
           working-directory: ./swpq/part3/container-publish/containerbuild
-          run: ./build.sh build-$GITHUB_RUN_NUMBER idi2020.azurecr.io
+          run: ./stateexample build-$GITHUB_RUN_NUMBER idi2020.azurecr.io
