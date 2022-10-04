@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ -f "./state.txt" ]];
+then
+    value='cat state.txt'
+    echo "Inhalt der Datei \"state.txt\":"
+    echo "$value"
+fi
+echo "Bitte geben Sie eine Nachricht ein":
+read message
+echo "$message" > ./state.txt
+value="cat state.txt"
+echo "Inhalt der Datei \"state.txt?\":"
+echo "$value"

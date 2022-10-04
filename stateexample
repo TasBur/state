@@ -1,0 +1,13 @@
+#!/bin/bash
+FILE=./var/stateexample/state.txt
+if [[ -f "$FILE" ]]; then
+    echo ">>> Inhalt der Datei State:"
+    echo "$(<$FILE )"
+else
+    echo ">>> Datei existiert nicht"
+fi
+echo ">>> Geben sie eine Nachricht ein:"
+read userInput
+echo "$userInput" > $FILE
+echo ">>> Inhalt der neuen Datei State:"
+echo "$(<$FILE )"

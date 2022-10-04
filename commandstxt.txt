@@ -1,0 +1,7 @@
+docker run -ti --mount source=stateexample,target=/var/stateexample stateexample
+
+docker volume  create stateexample 
+
+docker tag stateexample:bta5263 idi2020.azurecr.io/stateexample:bta5263
+
+docker push idi2020.azurecr.io/stateexample:bta5263
