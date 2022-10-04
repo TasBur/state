@@ -15,5 +15,9 @@ jobs:
           username: ${{ secrets.IDI2020_REGISTRY_USERNAME }}
           password: ${{ secrets.IDI2020_REGISTRY_PASSWORD }}
       - name: Build and publish container
+<<<<<<< HEAD
         working-directory: ./
+=======
+        working-directory: ./swpq/part3/container-publish/containerbuild
+>>>>>>> 8ca10f275f5beb161abdf94d5a153f61533a038e
         run: ./stateexample build-$GITHUB_RUN_NUMBER idi2020.azurecr.io
