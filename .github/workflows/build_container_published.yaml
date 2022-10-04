@@ -1,0 +1,19 @@
+name: part3 build and publish container
+on:
+  push:
+    paths:
+      - 'swpq/part3/container-publish/**'
+jobs:
+  build-and-publish-container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to the registry 
+        uses: azure/docker-login@v1
+        with:
+          login-server: idi2020.azurecr.io
+          username: ${{ secrets.IDI2020_REGISTRY_USERNAME }}
+          password: ${{ secrets.IDI2020_REGISTRY_PASSWORD }}
+        - name: Build and publish container
+          working-directory: ./swpq/part3/container-publish/containerbuild
+          run: ./build.sh build-$GITHUB_RUN_NUMBER idi2020.azurecr.io
